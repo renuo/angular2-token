@@ -151,7 +151,7 @@ export class Angular2TokenService implements CanActivate {
 
         let observ = this.post(this._constructUserPath() + this._options.signInPath, body);
 
-        observ.subscribe(res => this._currentUserData = res.json().data, error => null);
+        observ.subscribe(res => this._currentUserData = res.json().data, _error => null);
 
         return observ;
     }
@@ -188,7 +188,7 @@ export class Angular2TokenService implements CanActivate {
     validateToken(): Observable<Response> {
         let observ = this.get(this._constructUserPath() + this._options.validateTokenPath);
 
-        observ.subscribe(res => this._currentUserData = res.json().data, error => null);
+        observ.subscribe(res => this._currentUserData = res.json().data, _error => null);
 
         return observ;
     }
